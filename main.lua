@@ -1,6 +1,6 @@
 local riseoptions = {
     CustomText = "",
-    Theme = "Rise Blend",
+    Theme = "Legacy",
     RenderToggle = true,
     ShowRenderModules = true,
     NameTags = false,
@@ -10,9 +10,9 @@ local riseoptions = {
 }
 
 local risethemes = {
-    ["Rise Blend"] = {
-        TextGUIColor1 = Color3.fromRGB(71, 233, 160),
-        TextGUIColor2 = Color3.fromRGB(71, 148, 253),
+    ["Legacy"] = {
+        TextGUIColor1 = Color3.fromRGB(0, 204, 255),
+        TextGUIColor2 = Color3.fromRGB(0, 204, 255),
     },
     ["Rise"] = {
         TextGUIColor1 = Color3.fromRGB(255, 255, 255),
@@ -236,7 +236,7 @@ local function getcustomassetfunc(path)
         spawn(function()
             local textlabel = Instance.new("TextLabel")
             textlabel.Size = UDim2.new(1, 0, 0, 36)
-            textlabel.Text = "Downloading "..path
+            textlabel.Text = "Installing Rise Assets. Currently downloading "..path
             textlabel.BackgroundTransparency = 1
             textlabel.TextStrokeTransparency = 0
             textlabel.TextSize = 30
@@ -321,7 +321,7 @@ local windowtabs = {
         Icon = "🌎"
     }),
     Info = guilib:CreateCategory({
-        Name = "Info",
+        Name = "Credits",
         Icon = "ℹ️"
     })
 }
@@ -342,7 +342,7 @@ infolab2.Position = UDim2.new(0, 250, 0, 136)
 infolab2.TextColor3 = Color3.fromRGB(130, 130, 130)
 infolab2.TextSize = 40
 infolab2.Font = Enum.Font.SourceSans
-infolab2.Text = "roblox"
+infolab2.Text = "6"
 infolab2.TextXAlignment = Enum.TextXAlignment.Left
 infolab2.TextYAlignment = Enum.TextYAlignment.Top
 infolab2.BackgroundTransparency = 1
@@ -352,7 +352,7 @@ infolab3.Position = UDim2.new(0, 124, 0, 263)
 infolab3.TextColor3 = Color3.fromRGB(180, 180, 180)
 infolab3.TextSize = 30
 infolab3.Font = Enum.Font.SourceSansLight
-infolab3.Text = "Registered to xylex"
+infolab3.Text = "Private Build"
 infolab3.TextXAlignment = Enum.TextXAlignment.Left
 infolab3.TextYAlignment = Enum.TextYAlignment.Top
 infolab3.BackgroundTransparency = 1
@@ -363,15 +363,8 @@ infolab4.TextColor3 = Color3.fromRGB(130, 130, 130)
 infolab4.TextSize = 30
 infolab4.Font = Enum.Font.SourceSansLight
 infolab4.Text = [[
-Orignal Client by Alan32, Technio
-Strikeless, Nicklas, Auth,
-Hazsi, Solastis
-and Billionare
-intent.store
-riseclient.com
-    
-Roblox Port by 7GrandDad
-All rights goto the Rise Team
+Made by 7GrandDadPGN
+Modified by Levv
 ]]
 infolab4.TextXAlignment = Enum.TextXAlignment.Left
 infolab4.TextYAlignment = Enum.TextYAlignment.Top
@@ -689,7 +682,7 @@ end
 
 local risetext = Instance.new("TextLabel")
 risetext.Text = "Rise"
-risetext.Font = Enum.Font.TitilliumWeb
+risetext.Font = Enum.Font.Legacy
 risetext.TextSize = 53
 risetext.TextColor3 = Color3.new(1, 1, 1)
 risetext.BackgroundTransparency = 1
@@ -710,7 +703,7 @@ risegradient.Parent = risetext
 local risetextversion = risetext:Clone()
 local risetextcustom = risetext:Clone()
 risetextversion.TextSize = 26
-risetextversion.Text = "5.94"
+risetextversion.Text = ""
 risetextversion.Position = UDim2.new(0, 66, 0, 6)
 risetextversion.Parent = risetext
 risetextversion.TextLabel.TextSize = 26
@@ -821,7 +814,7 @@ local newnum = 0
 local function refreshbars(textlists)
     local size = 0
     for i3,v3 in pairs(textlists) do 
-        size = size + 22
+        size = size + 19
     end
     risearraylistlayout.Parent = nil
     risearraylist:ClearAllChildren()
@@ -834,7 +827,7 @@ local function refreshbars(textlists)
 		frame.BorderSizePixel = 0
 		frame.BackgroundTransparency = 0.62
         frame.Text = newstr
-        frame.TextSize = 30
+        frame.TextSize = 17
         frame.TextColor3 = Color3.new(1, 0, 0)
         if calcnum < 1 then 
             frame.TextColor3 = risethemes[riseoptions.Theme].TextGUIColor1:lerp(risethemes[riseoptions.Theme].TextGUIColor2, calcnum)
@@ -843,7 +836,7 @@ local function refreshbars(textlists)
         else
             frame.TextColor3 = risethemes[riseoptions.Theme].TextGUIColor1
         end
-        frame.Font = Enum.Font.TitilliumWeb
+        frame.Font = Enum.Font.Legacy
 		frame.BackgroundColor3 = Color3.new(0,0,0)
 		frame.Visible = true
 		frame.ZIndex = (#textlists - i2) + 1
